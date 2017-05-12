@@ -1,0 +1,29 @@
+<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="example-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Custom R Us</li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <% unless user_signed_in? %>
+        <li>
+          <%= link_to 'Sign In',new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to 'Sign up', new_user_registration_path %>
+        </li>
+
+      <% else %>
+        <li>
+          <%= link_to 'Log Out', destroy_user_session_path %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
